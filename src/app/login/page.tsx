@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Link from "next/link";
 import { toast } from "sonner";
-import { ShieldCheck } from "lucide-react";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -42,10 +41,6 @@ export default function LoginPage() {
             <div><Label htmlFor="password">Kata sandi</Label><Input id="password" type="password" value={password} onChange={e=> setPassword(e.target.value)} required className="mt-1 h-11 rounded-xl" placeholder="••••••••" autoComplete="current-password" /></div>
             <Button type="submit" disabled={loading} className="w-full rounded-full h-11 font-medium">{loading?"Memproses...":"Masuk"}</Button>
             <p className="text-sm text-center">Belum punya akun? <Link href="/register" className="font-medium text-primary hover:underline">Daftar</Link></p>
-            <div className="rounded-xl bg-stone-50 border p-3 text-xs flex gap-2">
-              <ShieldCheck className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-              <span className="text-muted-foreground">Demo admin: <span className="font-mono text-foreground">admin@temu.id / admin123</span> — daftar admin otomatis via register dengan email tersebut.</span>
-            </div>
           </form>
         </CardContent>
       </Card>
